@@ -7,6 +7,9 @@ import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js'
 import userRoutes from './routes/users.js'
 
+
+
+
 const app = express();
 dotenv.config();
 
@@ -31,3 +34,22 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
 
+
+/*
+
+const http = require('http');
+
+const hostname = '0.0.0.0';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Zeet Node');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`server running at http://${hostname}:${port}`);
+})
+
+*/
